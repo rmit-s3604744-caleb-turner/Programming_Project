@@ -1,0 +1,173 @@
+
+
+
+
+.nav {
+
+    
+
+
+	 display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+
+    overflow: hidden;  /* Crop it like it's hot! */
+
+    /* not part of the implementation; only to display what's going on */
+    border: 1px solid black;
+    background-color: #ddd;
+   
+  
+}
+
+
+
+
+ul {
+
+    overflow: hidden;
+    position: relative;
+     left: 28%;
+     max-width: 100%;
+    /*background-color: #333;*/
+}
+
+
+a {
+    
+    /*color: white;*/
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+     position: relative;
+  
+   padding-left: 80px;
+
+}
+.Mcontainer{
+	
+	position: relative;
+	
+	width: 600px;
+    height: 400px;
+    top:200px; 
+    right: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+
+    overflow: hidden;  /* Crop it like it's hot! */
+
+    /* not part of the implementation; only to display what's going on */
+    border: 1px solid black;
+    background-color: #ddd;
+     max-width: 100%;
+	 height: auto;
+
+
+
+
+   
+
+   
+}
+
+
+
+.MI {
+	position:relative;	
+	width: 600px;
+	
+	 max-width: 100%;
+	 height: auto;
+   
+
+}
+
+
+
+
+
+
+.Tcontainer {
+    /* Set size of crop area. Setting its location happens bellow. */
+    position: relative;
+    width: 300px;
+   
+    left: 260px;
+    bottom: 189px;
+    overflow: hidden;  /* Crop it like it's hot! */
+    display: block;
+      margin-left: auto;
+    margin-right: auto;
+     border: 1px solid black;
+
+    /* not part of the implementation; only to display what's going on */
+
+    background-color: #ddd;
+
+       max-width: 100%;
+	 height: 190px;
+
+}
+
+.TT {
+    /* Set the crop location by shifting the image
+     * up by 70px and to the right by 30px.
+     */
+    position: relative;
+    
+
+    /* Scale the image as you normally would. */
+         
+     max-width: 100%;
+	 height: 180px;
+
+
+}
+
+
+
+
+
+}
+
+
+
+.Bcontainer {
+	    position: relative;
+    width: 300px;
+    height: 190px;
+    left: 260px;
+    bottom: 180px;
+    
+    overflow: hidden;  /* Crop it like it's hot! */
+    display: block;
+      margin-left: auto;
+    margin-right: auto;
+     border: 1px solid black;
+
+    /* not part of the implementation; only to display what's going on */
+
+    background-color: #ddd;
+
+       max-width: 100%;
+	 
+
+}
+
+.BU {
+	    position: relative;
+    
+
+    /* Scale the image as you normally would. */
+ 	
+    width: 100%;
+     max-width: 100%;
+	 height: 200px;
+}
+
+
+
