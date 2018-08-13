@@ -1,0 +1,8 @@
+1|john doe|cinema2|Space Jam|0Action|1Adventure|4Mystery|3Horror|
+1|3location|5movies|1genre|
+2|greg jennings|cinema1|Space Jam#Avengers|4Action#0Adventure#0Mystery#0Horror|
+2|5location|3movies|4genre|
+3|steve smith|cinema2|Shrek 2|0Action|1Adventure|4Mystery|3Horror|
+3|3location|5movies|1genre|
+4|Jesus Christ|cinema2|Space Jam|1Action|3Adventure|3Mystery|2Horror|
+4|3location|5movies|1genre|

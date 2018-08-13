@@ -2,7 +2,7 @@
 
 include(resource_path() . '..\lang\readFile.php');
 
-show();
+print_r(readIntoArray());
 
 ?>
 @extends('layouts.app')
