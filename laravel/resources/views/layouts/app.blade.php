@@ -8,6 +8,6 @@
 	<body>
 		@yield('content')
 		
-		@include('include.sidebar')
+		<!--@include('include.sidebar')-->
 	</body>
 </html>

@@ -1,7 +1,10 @@
 <?php 
 
+// Reads data into an array.
 function readIntoArray(){
 	
+	
+	// using a file as temp storage until database is working
 	$data = file_get_contents('users.txt');
 	$data = explode("\n", $data);
 	
@@ -13,12 +16,10 @@ function readIntoArray(){
 		$array[] = explode('|', $row);
 	}
 
+	// test data, this would be based on the user's login credentials
 	$user1 = $array[0];
 	$user2 = $array[6];
 	$user1Preferences = $array[1];
-	
-	
-	
 	
 	
 	return getMatchArray($array, $user1[0]);
@@ -26,7 +27,7 @@ function readIntoArray(){
 
 
 
-
+// creates an array of matches
 function getMatchArray($array, $userID){
 	
 	foreach($array AS $row){
@@ -50,6 +51,8 @@ function getMatchArray($array, $userID){
 	$length = count($user1Details);
 	$scores = array();
 	
+	$maxScore = ((int)$user1Preferences[1] + (int)$user1Preferences[2] + (int)$user1Preferences[3]);
+	
 	
 	foreach($array AS $row){
 		if($row !== $user1Details){
@@ -57,8 +60,12 @@ function getMatchArray($array, $userID){
 				if(count($row) == count($user1Details)){
 
 					$similarity = findSimilarity($user1Details, $user1Preferences, $row);
+					
+					$percentage = $similarity / $maxScore;
+					$percentage = round((float)$percentage * 100) . '%';
+					
 					$tempArray = array();
-					array_push($tempArray, $row[0], $row[1], $similarity);
+					array_push($tempArray, $row[1], $similarity, $percentage);
 					array_push($scores, $tempArray);
 
 				}
@@ -69,25 +76,27 @@ function getMatchArray($array, $userID){
 	}
 	
 	
+	// a bubblesort method that sorts the array.
 	usort($scores, "callbackSort");
 	
-	
+	// can restrict the array to top 10 results or so here
 	return $scores;
 }
 
 
+// Means of bubblesorting the array so that the highest % is 1st.
 function callbackSort($a, $b){
-	return ($a[2] >= $b[2]) ? -1 : 1;
+	return ($a[1] >= $b[1]) ? -1 : 1;
 }
 
 
 
 
 
-
+// Combined similarity function.
 function findSimilarity($user1Details, $user1Preferences, $user2Details){
 	
-	echo $user2Details[1];
+
 	
 	$genreSimilarity = findGenreSimilarity($user1Details, $user2Details);
 	$movieSimilarity = findMovieSimilarity($user1Details, $user2Details);
@@ -108,6 +117,7 @@ function findSimilarity($user1Details, $user1Preferences, $user2Details){
 }
 
 
+// Function to find the similarity between 2 users and their preferred genres.
 function findGenreSimilarity($user1Details, $user2Details){
 	$length = count($user1Details) -1;
 	$skipEntries = 4;
@@ -134,7 +144,7 @@ function findGenreSimilarity($user1Details, $user2Details){
 }
 
 
-
+// Fucntion to find similarity between 2 users and the movies they like
 function findMovieSimilarity($user1Details, $user2Details){
 	
 	$user1Movies = explode('#', $user1Details[3]);
@@ -165,7 +175,7 @@ function findMovieSimilarity($user1Details, $user2Details){
 
 
 
-
+// Fuction to determine if the users have a similar location
 function findCinemaSimilarity($user1Details, $user2Details){
 	
 	$text = $user1Details[2];
