@@ -7,5 +7,7 @@
 	
 	<body>
 		@yield('content')
+		
+		@include('include.sidebar')
 	</body>
 </html>
