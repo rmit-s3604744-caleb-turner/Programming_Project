@@ -2,15 +2,12 @@
 
 // Reads data into an array.
 function readIntoArray(){
-	
 
-	
-
-	
 	return getMatchArray();
 }
 
-function getDetails($userID){
+
+function getSQL($SQL){
 	$servername = "localhost";
 	$username = "root";
 	$password = "test";
@@ -21,9 +18,19 @@ function getDetails($userID){
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 	} 
+	
+	$result = $conn->query($SQL);
+	
+	return $result;
+	
+}
+
+
+function getDetails($userID){
+	
 
 	$sql = "SELECT * FROM userdetail WHERE ID=".$userID;
-	$result = $conn->query($sql);
+	$result = getSQL($sql);
 	
 	$detailsArray = array();
 	
@@ -39,19 +46,9 @@ function getDetails($userID){
 
 
 function getPrefs($userID){
-	$servername = "localhost";
-	$username = "root";
-	$password = "test";
-	$dbname = "matchdatabase";
-	
-	$conn = new mysqli($servername, $username, $password, $dbname);
-	
-	if ($conn->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
-	} 
 
-	$sql = "SELECT * FROM userpreference WHERE ID=".$userID;
-	$result = $conn->query($sql);
+	$sql = "SELECT * FROM userpreference WHERE ID=".$userID;	
+	$result = getSQL($sql);
 	
 	$prefsArray = array();
 	if($result->num_rows > 0){
@@ -64,19 +61,10 @@ function getPrefs($userID){
 
 
 function getUsers(){
-	$servername = "localhost";
-	$username = "root";
-	$password = "test";
-	$dbname = "matchdatabase";
 	
-	$conn = new mysqli($servername, $username, $password, $dbname);
-	
-	if ($conn->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
-	} 
 
-	$sql = "SELECT * FROM userpreference";
-	$result = $conn->query($sql);
+	$sql = "SELECT * FROM userpreference";	
+	$result = getSQL($sql);
 	
 	$userList = array();
 	
