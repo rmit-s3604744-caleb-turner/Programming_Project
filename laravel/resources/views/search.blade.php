@@ -21,3 +21,13 @@ echo areDetailsSet(1);
 ?>
 @endsection
 
+
+<script type="text/javascript">
+var array = <?php json_encode($array)?>;
+/*
+array[0][0] == 1st match's ID
+array[1][1] == 2nd match's similarity score as a decimal
+array[0][2] == 1st match's similarity score as a %
+
+*/
+</script>
