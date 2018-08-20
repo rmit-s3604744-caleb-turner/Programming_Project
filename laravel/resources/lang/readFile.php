@@ -1,4 +1,6 @@
 <?php 
+include(resource_path() . '..\lang\database.php');
+
 
 // Reads data into an array.
 function readIntoArray(){
@@ -7,75 +9,6 @@ function readIntoArray(){
 }
 
 
-function getSQL($SQL){
-	$servername = "localhost";
-	$username = "root";
-	$password = "test";
-	$dbname = "matchdatabase";
-	
-	$conn = new mysqli($servername, $username, $password, $dbname);
-	
-	if ($conn->connect_error) {
-		die("Connection failed: " . $conn->connect_error);
-	} 
-	
-	$result = $conn->query($SQL);
-	
-	return $result;
-	
-}
-
-
-function getDetails($userID){
-	
-
-	$sql = "SELECT * FROM userdetail WHERE ID=".$userID;
-	$result = getSQL($sql);
-	
-	$detailsArray = array();
-	
-	if($result->num_rows > 0){
-		$row = $result->fetch_assoc();
-		array_push($detailsArray, $row["ID"], $row["name"], $row["location"], $row["movies"], 
-									$row["action"], $row["horror"], $row["mystery"]);
-		
-	}
-	
-	return $detailsArray;
-}
-
-
-function getPrefs($userID){
-
-	$sql = "SELECT * FROM userpreference WHERE ID=".$userID;	
-	$result = getSQL($sql);
-	
-	$prefsArray = array();
-	if($result->num_rows > 0){
-		$row = $result->fetch_assoc();
-		array_push($prefsArray,$row["location"], $row["movies"], $row["genres"]);
-	}
-	
-	return $prefsArray;
-}
-
-
-function getUsers(){
-	
-
-	$sql = "SELECT * FROM userpreference";	
-	$result = getSQL($sql);
-	
-	$userList = array();
-	
-	if($result->num_rows > 0){
-		while($row = $result->fetch_assoc()){
-			array_push($userList,$row["ID"]);
-		}
-	}
-	
-	return $userList;
-}
 
 
 // creates an array of matches

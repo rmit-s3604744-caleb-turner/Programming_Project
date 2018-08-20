@@ -14,6 +14,10 @@ foreach($array AS $row){
 	echo $row[0] . "  |  " . $row[2] . "<br>";
 }
 
+
+
+echo areDetailsSet(1);
+
 ?>
 @endsection
 
