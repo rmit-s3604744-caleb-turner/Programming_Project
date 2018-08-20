@@ -3,84 +3,134 @@
 // Reads data into an array.
 function readIntoArray(){
 	
-	
-	// using a file as temp storage until database is working
-	$data = file_get_contents('users.txt');
-	$data = explode("\n", $data);
-	
-	unset($data[count($data) -1]);
 
-	$array = array();
 	
-	foreach($data AS $row){
-		$array[] = explode('|', $row);
-	}
 
-	// test data, this would be based on the user's login credentials
-	$user1 = $array[0];
-	$user2 = $array[6];
-	$user1Preferences = $array[1];
 	
-	
-	return getMatchArray($array, $user1[0]);
+	return getMatchArray();
 }
 
-
-
-// creates an array of matches
-function getMatchArray($array, $userID){
+function getDetails($userID){
+	$servername = "localhost";
+	$username = "root";
+	$password = "test";
+	$dbname = "matchdatabase";
 	
-	foreach($array AS $row){
-		if((int)$row[0] == $userID){
-			$user1Details = $row;
-			break;
-		}
-	}
+	$conn = new mysqli($servername, $username, $password, $dbname);
 	
-	foreach($array AS $row){
-		if((int)$row[0] == $userID){
-			if($row !== $user1Details){
-				$user1Preferences = $row;
-				break;
-			}
-		}
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	} 
+
+	$sql = "SELECT * FROM userdetail WHERE ID=".$userID;
+	$result = $conn->query($sql);
+	
+	$detailsArray = array();
+	
+	if($result->num_rows > 0){
+		$row = $result->fetch_assoc();
+		array_push($detailsArray, $row["ID"], $row["name"], $row["location"], $row["movies"], 
+									$row["action"], $row["horror"], $row["mystery"]);
 		
 	}
 	
+	return $detailsArray;
+}
+
+
+function getPrefs($userID){
+	$servername = "localhost";
+	$username = "root";
+	$password = "test";
+	$dbname = "matchdatabase";
 	
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	} 
+
+	$sql = "SELECT * FROM userpreference WHERE ID=".$userID;
+	$result = $conn->query($sql);
+	
+	$prefsArray = array();
+	if($result->num_rows > 0){
+		$row = $result->fetch_assoc();
+		array_push($prefsArray,$row["location"], $row["movies"], $row["genres"]);
+	}
+	
+	return $prefsArray;
+}
+
+
+function getUsers(){
+	$servername = "localhost";
+	$username = "root";
+	$password = "test";
+	$dbname = "matchdatabase";
+	
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	} 
+
+	$sql = "SELECT * FROM userpreference";
+	$result = $conn->query($sql);
+	
+	$userList = array();
+	
+	if($result->num_rows > 0){
+		while($row = $result->fetch_assoc()){
+			array_push($userList,$row["ID"]);
+		}
+	}
+	
+	return $userList;
+}
+
+
+// creates an array of matches
+function getMatchArray(){
+	
+
+	
+	$user1Details = getDetails(1);
+
+	$user1Preferences = getPrefs(1);
+
 	$length = count($user1Details);
 	$scores = array();
 	
-	$maxScore = ((int)$user1Preferences[1] + (int)$user1Preferences[2] + (int)$user1Preferences[3]);
+	$maxScore = ($user1Preferences[0] + $user1Preferences[1] + $user1Preferences[2]);
 	
 	
-	foreach($array AS $row){
-		if($row !== $user1Details){
-			if($row !== $user1Preferences){
-				if(count($row) == count($user1Details)){
-
-					$similarity = findSimilarity($user1Details, $user1Preferences, $row);
-					
-					$percentage = $similarity / $maxScore;
-					$percentage = round((float)$percentage * 100) . '%';
-					
-					$tempArray = array();
-					array_push($tempArray, $row[1], $similarity, $percentage);
-					array_push($scores, $tempArray);
-
-				}
-			}
+	$userList = getUsers();
+	
+	foreach($userList as $user){
+		if($user != $user1Details[0]){
+			$user2Details = getDetails($user);
 			
+			
+			$similarity = findSimilarity($user1Details, $user1Preferences, $user2Details);
+			
+			
+			$percentage = $similarity / $maxScore;
+			$percentage = round((float)$percentage * 100) . '%';
+					
+			$tempArray = array();
+			array_push($tempArray, $user, $similarity, $percentage);
+			array_push($scores, $tempArray);
 		}
-
 	}
 	
-	
+
 	// a bubblesort method that sorts the array.
 	usort($scores, "callbackSort");
 	
 	// can restrict the array to top 10 results or so here
 	return $scores;
+	
 }
 
 
@@ -97,15 +147,14 @@ function callbackSort($a, $b){
 function findSimilarity($user1Details, $user1Preferences, $user2Details){
 	
 
-	
 	$genreSimilarity = findGenreSimilarity($user1Details, $user2Details);
 	$movieSimilarity = findMovieSimilarity($user1Details, $user2Details);
 	$cinemaSimilarity = findCinemaSimilarity($user1Details, $user2Details);
 	
 
-	$genrePreference = (int)$user1Preferences[3][0];
-	$moviePreference = (int)$user1Preferences[2][0];
-	$cinemaPreference = (int)$user1Preferences[1][0];
+	$genrePreference = $user1Preferences[2];
+	$moviePreference = $user1Preferences[1];
+	$cinemaPreference = $user1Preferences[0];
 	
 	
 	$score = ($genreSimilarity * $genrePreference) 
