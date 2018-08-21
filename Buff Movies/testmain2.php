@@ -51,13 +51,9 @@
 	<img src="img/BU.jpg" class="BU">
 </div>
 
-<!-- <div class= " Econtainer">
+<div class= " Econtainer">
   <img src="img/E2.jpg" class = "E2">
 </div>
- -->
-
-
-
 
 
 
@@ -67,10 +63,10 @@
 <div class= " TMcontainer">
   <img src="img/TM.jpg" class = "TM">
 </div>
-<!-- 
+
 <div class= " Pcontainer">
   <img src="img/FP.jpg" class = "FP">
-</div> -->
+</div>
 
 <div class= " DMcontainer">
   <img src="img/DM.jpg" class = "DM">
