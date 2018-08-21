@@ -57,13 +57,13 @@
   <img src="img/TM.jpg" class = "TM">
 </div>
 
-<div class= " Pcontainer">
+<!-- <div class= " Pcontainer">
   <img src="img/FP.jpg" class = "FP">
 </div>
 
 <div class= " DMcontainer">
   <img src="img/DM.jpg" class = "DM">
-</div>
+</div> -->
 
 <div class="footer">
 <a href="#" class="fa fa-facebook"></a>

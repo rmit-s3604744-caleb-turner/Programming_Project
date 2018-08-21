@@ -346,8 +346,9 @@ left: 50%;
     width: 260px;
     height: 400px;
     left: 500px;
-    bottom: 550px;
+    bottom: 150px;
     overflow: hidden;
+
 
     border: 1px solid black;  
 }
@@ -447,5 +448,19 @@ left: 50%;
 position: absolute;
 left: 100px;
 bottom: 100px;
+
+}
+
+
+.p {
+
+   position: absolute;
+    width: 300px;
+   
+    left: 320px;
+    bottom: 219px;
+    overflow: hidden;  /* Crop it like it's hot! */
+
+     border: 1px solid black;
 
 }
