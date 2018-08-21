@@ -5,9 +5,18 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+  
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+
+
+
+
+<div class = "login">
+    <a href="" class="button">Hello John</a>
+</div>
 
 
 <div class = "nav">
@@ -42,10 +51,11 @@
 	<img src="img/BU.jpg" class="BU">
 </div>
 
-<!-- <div class= " Econtainer">
+<div class= " Econtainer">
   <img src="img/E2.jpg" class = "E2">
 </div>
- -->
+
+
 
 
 
@@ -53,14 +63,22 @@
 <div class= " TMcontainer">
   <img src="img/TM.jpg" class = "TM">
 </div>
-<!-- 
+
 <div class= " Pcontainer">
   <img src="img/FP.jpg" class = "FP">
-</div> -->
+</div>
 
 <div class= " DMcontainer">
   <img src="img/DM.jpg" class = "DM">
 </div>
+
+<div class= " Jcontainer">
+  <img src="img/JE.jpg" class = "JE">
+</div>
+
+
+
+
 
 <div class="footer">
 <a href="#" class="fa fa-facebook"></a>

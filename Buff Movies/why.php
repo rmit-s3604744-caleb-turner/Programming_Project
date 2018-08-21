@@ -53,7 +53,7 @@
                   $_SESSION['username'] = 'tutorialspoint';
                   
                   echo 'You have entered valid use name and password'; 
-                  header('Location: main.php');
+                  header('Location: testmain2.php');
 
                }else {
                   $msg = 'Wrong username or password';
