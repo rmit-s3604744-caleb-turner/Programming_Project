@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <?php
    ob_start();
    session_start();
@@ -17,7 +15,7 @@
 
 
       <title>Tutorialspoint.com</title>
-      <link rel="stylesheet" type="text/css" href="style.css">
+      <link href = "" rel = "stylesheet">
 
    </head>
 	
@@ -53,7 +51,7 @@
                   $_SESSION['username'] = 'tutorialspoint';
                   
                   echo 'You have entered valid use name and password'; 
-                  header('Location: main.php');
+               header('Location: main.php');
 
                }else {
                   $msg = 'Wrong username or password';
@@ -68,7 +66,7 @@
 
       </div> <!-- /container -->
       
-      <div class = "Login">
+      <div class = "lmao1">
       
          <form class = "model-content animate" role = "form" 
             action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); 
@@ -87,9 +85,6 @@
          
       </div> 
       
-
-
-      <div class= "p"></div>
 
 
 
