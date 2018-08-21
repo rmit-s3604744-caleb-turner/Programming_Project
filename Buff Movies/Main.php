@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html>
+
+
 <body>
 <head>
+
+
+
+
+
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <script src="test.js"></script>
+
+
+
 </head>
 
 
@@ -18,6 +29,23 @@
   		<a href="#contact"class= "movies">Movies</a>
   		<a href="#about"class= "forum">Forum</a>
 	</ul>
+
+
+
+
+
+
+
+
+  <div>
+      <button onclick="myFunction()">Log in</button>
+
+  </div>
+
+<?php 
+    $email = "john@example.com";
+    $password = "john";
+?>
 
 </div> 
 
@@ -56,5 +84,9 @@
   </div>
 
 
+
+
 </body>
+
+
 </html>
