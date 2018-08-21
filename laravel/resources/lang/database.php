@@ -35,8 +35,8 @@ function areDetailsSet($ID){
 	$array = $result->fetch_assoc();
 	
 	if(strlen($array["name"]) != 0){
-		if(strlen($array["location"] != 0){
-			if(strlen($array["movies"] != 0){
+		if(strlen($array["location"]) != 0){
+			if(strlen($array["movies"]) != 0){
 				return "true";
 			}
 		}
