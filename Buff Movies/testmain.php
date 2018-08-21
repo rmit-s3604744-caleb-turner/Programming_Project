@@ -65,6 +65,14 @@
   <img src="img/DM.jpg" class = "DM">
 </div>
 
+<div class= " Jcontainer">
+  <img src="img/JE.jpg" class = "JE">
+</div>
+
+
+
+
+
 <div class="footer">
 <a href="#" class="fa fa-facebook"></a>
 <a href="#" class="fa fa-twitter"></a>
