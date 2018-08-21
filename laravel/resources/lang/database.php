@@ -26,6 +26,8 @@ function addUser($email, $password){
 	$SQL = "INSERT INTO userpreference VALUES (".$latestID.",0,0,0)";
 	$result = $conn->query($SQL);
 
+	
+	mysqli_close($conn);
 }
 
 function areDetailsSet($ID){
@@ -118,6 +120,7 @@ function getSQL($SQL){
 	
 	$result = $conn->query($SQL);
 	
+	mysqli_close($conn);
 	return $result;
 	
 }
