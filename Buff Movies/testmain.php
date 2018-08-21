@@ -63,7 +63,11 @@
 
 <div class= " DMcontainer">
   <img src="img/DM.jpg" class = "DM">
+<<<<<<< HEAD
 </div>
+=======
+</div> -->
+>>>>>>> parent of fa04e2c... Merge branch 'Front-End' of https://github.com/rmit-s3604744-caleb-turner/Programming_Project into Front-End
 
 <div class="footer">
 <a href="#" class="fa fa-facebook"></a>
