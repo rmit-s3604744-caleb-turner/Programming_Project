@@ -3,6 +3,10 @@
 
 @section('content')
 	<h1> Match <h1>
+
+
+
+		<img src="Bean.jpg">
 	
 <?php
 
@@ -21,7 +25,7 @@ echo areDetailsSet(1);
 ?>
 @endsection
 
-
+<img src="Bean.jpg">
 <script type="text/javascript">
 var array = <?php json_encode($array)?>;
 /*

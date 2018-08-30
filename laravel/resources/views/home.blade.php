@@ -10,7 +10,7 @@
 	<p> Appended to sidebar </p>
 @endsection
 
-
+<img src="Bean.jpg">
 
 <?php 
 

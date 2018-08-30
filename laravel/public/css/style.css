@@ -1,0 +1,710 @@
+
+
+
+@media screen and (max-width: 1200px) {
+
+     .carousel {
+     
+           transform: translate(-20px,20px) scale(0.9,0.9);
+
+    }
+
+}
+
+
+
+
+@media screen and (max-width: 1100px) {
+
+     .carousel {
+     
+           transform: translate(-20px,50px) scale(0.9,0.9);
+
+    }
+
+}
+
+
+
+@media screen and (max-width: 1000px) {
+
+     .carousel {
+     
+           transform: translate(-150px,100px) scale(0.9,0.9);
+
+    }
+
+        .Tcontainer {
+    
+    transform: translate(-25px) scale(1,1);
+   
+    }
+    .Bcontainer {
+ transform: translate(-25px) scale(1,1);
+
+    }
+.Mcontainer{
+  transform: translate(-32px) scale(1,1);
+
+    }
+
+}
+
+
+@media screen and (max-width: 900px){
+
+    .carousel {
+     
+      transform: translate(-250px) scale(0.8,0.8);
+
+    }
+
+    .TT{
+       
+
+
+    }
+    .Tcontainer {
+    
+    transform: translate(-40px) scale(1,1);
+   
+    }
+    .Bcontainer {
+ transform: translate(-40px) scale(1,1);
+
+    }
+.Mcontainer{
+  transform: translate(-42px) scale(1,1);
+
+    }
+
+
+}
+
+@media screen and (max-width: 800px){
+
+.carousel {
+     
+      transform: translate(-150px) scale(0.8,0.8);
+
+    }
+    .Tcontainer {
+    
+    transform: translate(-80px) scale(1,1);
+   
+    }
+    .Bcontainer {
+ transform: translate(-80px) scale(1,1);
+
+    }
+.Mcontainer{
+  transform: translate(-82px) scale(1,1);
+
+    }
+
+
+}
+
+
+@media screen and (max-width: 700px){
+
+  .carousel {
+     
+      transform: translate(-400px) scale(0.8,0.8);
+
+    }
+
+
+    .Tcontainer {
+    
+    transform: translate(-90px) scale(1,1);
+   
+    }
+    .Bcontainer {
+ transform: translate(-90px) scale(1,1);
+
+    }
+.Mcontainer{
+  transform: translate(-92px) scale(1,1);
+
+    } 
+
+
+}
+
+
+
+@media screen and (max-width: 650px) {
+
+    .alert-purple {
+        display: none !important;
+
+    }
+    .Tcontainer {
+        display: none !important;
+    }
+    .Mcontainer {
+        display: inline-block;
+        transform: translate(140px) scale(1,1);    }
+    .Bcontainer{
+         display: none !important;
+    }
+    .Econtainer{
+         display: none !important;
+    }
+    
+
+    .carousel {
+       transform: translate(-475px,300px) scale(0.5,0.5);
+    }
+
+
+}
+
+
+
+
+.nav {
+
+
+    
+
+position: relative;
+	 display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 50px;
+    top:120px; 
+   
+
+
+
+    overflow: hidden;  /* Crop it like it's hot! */
+
+  /*   not part of the implementation; only to display what's going on */
+    border: 1px solid black;
+    background-color: #ddd;
+
+     
+}
+
+
+
+
+ul {
+
+
+    position: absolute;
+
+    left: 10%;
+    right: 10%;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+
+ 
+
+    
+     max-width: 100%;
+    /*background-color: #333;*/
+}
+
+
+a.home {
+    
+    /*color: white;*/
+
+      position: absolute;
+    left: 22%;
+     
+    
+
+  
+    padding: 14px 16px;
+    text-decoration: none;
+   
+     
+
+   padding-left: 40px;
+   padding-right: 40px;
+
+  
+}
+
+a.find{
+        position: absolute;
+       left: 35%;
+   
+    
+
+  
+    padding: 14px 16px;
+    text-decoration: none;
+   
+     
+
+   padding-left: 40px;
+   padding-right: 40px;
+
+
+}
+
+a.movies {
+
+        position: absolute;
+       left: 53%;
+    
+    
+
+  
+    padding: 14px 16px;
+    text-decoration: none;
+   
+     
+
+   padding-left: 40px;
+   padding-right: 40px;
+}
+
+a.forum {
+
+
+        position: absolute;
+       left: 70%;
+     
+
+  
+    padding: 14px 16px;
+    text-decoration: none;
+   
+     
+
+   padding-left: 40px;
+   padding-right: 40px;
+}
+
+
+
+.alert-purple {
+ background:#000000;
+ color: #fff;
+ position: relative;
+ max-width: 100%;
+ width: 100%;
+height: 55px;  
+top: 121px;
+-webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
+
+
+
+  }
+
+  a.promo {
+
+position: absolute;
+left: 50%;
+
+  }
+
+
+.Mcontainer{
+	
+	position: relative;
+	
+	width: 600px;
+    height: 400px;
+    top:170px; 
+    right: 140px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+
+    overflow: hidden;  /* Crop it like it's hot! */
+
+    /* not part of the implementation; only to display what's going on */
+    border: 1px solid black;
+    background-color: #ddd;
+     max-width: 100%;
+	 height: auto;
+
+
+
+
+   
+
+   
+}
+
+
+
+.MI {
+	position:relative;	
+	width: 600px;
+	
+	 max-width: 100%;
+	 height: auto;
+   
+
+}
+
+
+.Mcontainer:hover{
+    opacity: 0.7;
+    transition: 1s;
+}
+
+
+
+
+
+.Tcontainer {
+    /* Set size of crop area. Setting its location happens bellow. */
+    position: relative;
+    width: 300px;
+   
+    left: 320px;
+    bottom: 219px;
+    overflow: hidden;  /* Crop it like it's hot! */
+    display: block;
+      margin-left: auto;
+    margin-right: auto;
+     border: 1px solid black;
+
+    /* not part of the implementation; only to display what's going on */
+
+    background-color: #ddd;
+
+       max-width: 100%;
+	 height: 190px;
+
+}
+
+.TT {
+    /* Set the crop location by shifting the image
+     * up by 70px and to the right by 30px.
+     */
+    position: relative;
+    
+
+    /* Scale the image as you normally would. */
+         
+     max-width: 100%;
+	 height: 180px;
+
+
+}
+
+.Tcontainer:hover {
+    opacity: 0.7;
+    transition: 1s;
+
+
+
+}
+
+
+
+.Bcontainer {
+	    position: relative;
+    width: 300px;
+    height: 190px;
+    left: 320px;
+    bottom: 210px;
+    
+    overflow: hidden;  /* Crop it like it's hot! */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+
+    /* not part of the implementation; only to display what's going on */
+
+    background-color: #ddd;
+
+       max-width: 100%;
+	 
+
+}
+
+.BU {
+	    position: relative;
+    
+
+    /* Scale the image as you normally would. */
+ 	
+    width: 100%;
+     max-width: 100%;
+	 height: 200px;
+}
+
+
+
+.Bcontainer:hover {
+    opacity: 0.7;
+    transition: 1s;
+}
+
+
+
+
+
+
+
+
+.container{
+
+  position: relative;
+  top:100px;
+  width: 100px;
+  height: 100px;
+
+}
+.carousel-inner{
+
+  position: relative;
+
+
+}
+
+.bean {
+  position: relative;
+  width: 390px;
+  height: 200px;
+right: 80px;
+
+
+}
+
+.lmao{
+
+  position: relative;
+  height: 200px;
+     width: 300px;
+    
+  
+     
+    
+
+
+
+    overflow: hidden;  /* Crop it like it's hot! */
+
+    /* not part of the implementation; only to display what's going on */
+    border: 1px solid black;
+    background-color: #ddd;
+     max-width: 100%;
+ 
+}
+
+
+.may {
+
+  position: relative;
+  width: 400px;
+  height: 200px;
+  right: 50px;
+
+}
+
+
+.lmao2 {
+
+    position: relative;
+ height:200px;
+  width: 300px;
+    
+   bottom: 200px;
+  left: 352px;
+     
+    
+
+
+
+    overflow: hidden;  /* Crop it like it's hot! */
+
+    /* not part of the implementation; only to display what's going on */
+    border: 1px solid black;
+    background-color: #ddd;
+     max-width: 100%;
+ 
+
+
+
+}
+
+
+
+.lmao3{
+   position: relative;
+  
+  height:200px;
+  width: 300px;  
+  bottom: 400px;
+  left: 700px;
+  
+    
+
+
+
+    overflow: hidden;  /* Crop it like it's hot! */
+
+    /* not part of the implementation; only to display what's going on */
+    border: 1px solid black;
+    background-color: #ddd;
+     max-width: 100%;
+   
+
+}
+
+
+
+
+.rob {
+
+  position: relative;
+  width: 400px;
+  height: 250px;
+  right: 40px;
+  bottom: 20px;
+
+}
+
+
+/*.item img {
+  width: 400px;
+  height: 200px;
+}
+*/
+.carousel {
+  position: relative;
+  width: 1000px;
+  height: 200px;
+  bottom:250px;
+ left: 10px;
+
+      display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+ol.carousel-indicators {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  left: 0;
+  right: 0;
+  width: auto;
+}
+
+ol.carousel-indicators li,
+ol.carousel-indicators li.active {
+  float: left;
+  width: 33%;
+  height: 10px;
+  margin: 0;
+  border-radius: 0;
+  border: 0;
+  background: transparent;
+}
+/*
+ol.carousel-indicators li.active {
+  background: yellow;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;;
+   color: white;
+   text-align: center;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.jesus {
+position: absolute;
+left: 100px;
+bottom: 100px;
+
+}
+
+
+.p {
+
+   position: absolute;
+    width: 300px;
+   
+    left: 320px;
+    bottom: 219px;
+    overflow: hidden;  /* Crop it like it's hot! */
+
+     border: 1px solid black;
+
+}
+
+
+
+.section2{
+
+
+}
