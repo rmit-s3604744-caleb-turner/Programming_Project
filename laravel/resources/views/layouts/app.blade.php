@@ -7,7 +7,15 @@
 	
 	<body>
 		@yield('content')
-		
 		<!--@include('include.sidebar')-->
+		
+		
+		<div class="container">
+		
+			@include('include.messages')
+			
+		</div>
+		
+		
 	</body>
 </html>

@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace MovieBuffs\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Post;
+use MovieBuffs\Post;
+use DB; 
 
 class PostsController extends Controller
 {
@@ -14,7 +15,27 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+
+		// get all 
+		// $posts = Post::all();
+		
+		// get a specific post
+		//$post = Post::where('title', '1st Post')->get();
+		
+		// alternative syntax
+		//$posts = DB::Select('SELECT * FROM posts');
+		
+		// limiting
+		//$posts = Post::orderBy('title', 'desc')->take(1)->get();
+		
+		
+		// pagination
+		$posts = Post::orderBy('title', 'desc')->paginate(1);
+		
+		
+		//$posts = Post::orderBy('title', 'desc')->get();
+		
+		
 		return view('posts.index')->with('posts', $posts);
 		
     }
@@ -26,7 +47,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -37,7 +58,20 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+			'title'=>'required',
+			'body'=>'required'
+		]);
+		
+		// Create post code
+		
+		$post = new Post;
+		$post->title = $request->input('title');
+		$post->body = $request->input('body');
+		
+		$post->save();
+		
+		return redirect('/posts')->with('success', 'Post Added');
     }
 
     /**
@@ -48,7 +82,8 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-		return Post::find($id);
+		$post = Post::find($id);
+		return view('posts.show')->with('post', $post);
     }
 
     /**

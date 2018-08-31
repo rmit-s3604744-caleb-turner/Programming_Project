@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace MovieBuffs;
 
 use Illuminate\Database\Eloquent\Model;
 
