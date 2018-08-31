@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset = "utf-8">
-		<title> BasicTheme </title>
+		<title> {{config('app.name', 'Movie Buffs')}} </title>
 	</head>
 	
 	<body>

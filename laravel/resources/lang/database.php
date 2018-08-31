@@ -61,10 +61,16 @@ function arePreferencesSet($ID){
 
 
 function canLogin($email, $password){
-	$sql = "SELECT * FROM userlogin WHERE email=".$email."  AND password=".$password;
+
+	$sql = "SELECT ID FROM userlogin WHERE email='$email' AND password='$password'";
+	
+	
 	$result = getSQL($sql);
-	if(mysql_num_rows($result)==0){
+
+	
+	if(mysqli_num_rows($result)==0){
 		return 0;
+		
 	}else{
 		$array = $result->fetch_assoc();
 		$ID = $array["ID"];

@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'PagesController@home');
+
+Route::get('/search', 'PagesController@search');
+
+Route::get('/login', 'PagesController@login');
 
 
-Route::get('/search', function () {
-    return view('search');
-});
+Route::resource('posts', 'PostsController');
