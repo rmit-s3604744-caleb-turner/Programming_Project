@@ -30,7 +30,7 @@ class PostsController extends Controller
 		
 		
 		// pagination
-		$posts = Post::orderBy('title', 'desc')->paginate(1);
+		$posts = Post::orderBy('created_at', 'desc')->paginate(1);
 		
 		
 		//$posts = Post::orderBy('title', 'desc')->get();

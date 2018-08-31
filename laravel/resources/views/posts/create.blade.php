@@ -16,8 +16,8 @@
 		<div class="form-group">
 			
 			{{Form::label('body', 'Body Text')}}
-			
-			{{Form::textarea('body', '', ['class' => 'form-control', 'placeholder' => 'Write Something'])}}
+			<!-- Don't change the ID of the text area, that gives it the editing functionality -->
+			{{Form::textarea('body', '', ['id' =>'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Write Something'])}}
 			
 		</div>
 		
