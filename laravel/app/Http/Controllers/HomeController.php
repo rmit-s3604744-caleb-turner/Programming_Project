@@ -3,6 +3,7 @@
 namespace MovieBuffs\Http\Controllers;
 
 use Illuminate\Http\Request;
+use MovieBuffs\User;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+		$user_id = auth()->user()->id;
+		$user = User::find($user_id);
+		
+        return view('home')->with('posts', $user->posts);
     }
 }
