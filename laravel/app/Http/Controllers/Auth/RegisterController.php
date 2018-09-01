@@ -3,6 +3,8 @@
 namespace MovieBuffs\Http\Controllers\Auth;
 
 use MovieBuffs\User;
+use MovieBuffs\UserDetail;
+use MovieBuffs\UserPreference;
 use MovieBuffs\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -63,10 +65,37 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+		
+		$newUser = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+		
+		
+		$id = $newUser->id;
+		
+		$userDetail = new UserDetail;
+		$userDetail->id = $id;
+		$userDetail->location = " ";
+		$userDetail->movies = " ";
+		$userDetail->genreAction = 0;
+		$userDetail->genreMystery = 0;
+		$userDetail->genreHorror = 0;
+		
+		$userDetail->save();
+		
+		
+		
+		$userPreference = new UserPreference;
+		$userPreference->id = $id;
+		$userPreference->location = 0;
+		$userPreference->movies = 0;
+		$userPreference->genre = 0;
+		
+		$userPreference->save();
+		
+		
+		return $newUser;
     }
 }
