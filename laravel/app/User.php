@@ -31,4 +31,14 @@ class User extends Authenticatable
 	public function posts(){
 		return $this->hasMany('MovieBuffs\Post');
 	}
+	
+	
+	public function details(){
+		return $this->hasOne('MovieBuffs\UserDetail');
+	}
+	
+	
+	public function preferences(){
+		return $this->hasOne('MovieBuffs\UserPreference');
+	}
 }

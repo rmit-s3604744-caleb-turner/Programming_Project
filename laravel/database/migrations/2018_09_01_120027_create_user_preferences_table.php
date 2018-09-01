@@ -13,17 +13,18 @@ class CreateUserPreferencesTable extends Migration
      */
     public function up()
     {
-		Schema::enableForeignKeyConstraints();
-		
         Schema::create('user_preferences', function (Blueprint $table) {
             $table->increments('id');
-			$table->integer('locationPref');
-			$table->integer('moviePref');
-			$table->integer('genreActionPref');
-			$table->integer('genreMysteryPref');
-			$table->integer('genreHorrorPref');
+			$table->integer('location');
+			$table->integer('movies');
+			$table->integer('genre');
             $table->timestamps();
         });
+		
+		
+		Schema::table('user_preferences', function($table){
+			$table->foreign('id')->references('id')->on('users')->onDelete('cascade');
+		});
     }
 
     /**

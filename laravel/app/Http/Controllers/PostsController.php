@@ -114,9 +114,7 @@ class PostsController extends Controller
 		if(auth()->user()->id !== $post->user_id){
 			return redirect('posts.posts')->with('error', 'Unauthorised Page: Access Denied');
 		}
-		
-		
-		
+
 		return view('posts.edit')->with('post', $post);
     }
 
