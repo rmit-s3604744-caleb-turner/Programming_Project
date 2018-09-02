@@ -4,6 +4,8 @@ namespace MovieBuffs\Http\Controllers\Auth;
 
 use MovieBuffs\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use MovieBuffs\User;
+use DB;
 
 class LoginController extends Controller
 {
@@ -20,12 +22,30 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+	
+	protected function authenticated($request, $user){
+		$id = $user->id;
+		
+		
+		// if not set preferences
+		if($user->preferenceSet == 0){
+			return redirect('preferences')->with('success', 'Please submit your preferences.');
+		}
+		
+		return redirect('dashboard');
+		
+	}
+	
+	
+	
+	
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/dashboard';
+	 
+    //protected $redirectTo = '/dashboard';
 
     /**
      * Create a new controller instance.

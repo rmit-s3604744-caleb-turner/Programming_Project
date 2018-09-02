@@ -27,10 +27,7 @@ class DetailsController extends Controller
 		
 		// get id
         $userID = auth()->user()->id;
-		
-	
-		
-		
+
 		$userDetails = UserDetail::find($userID);
 		
 		
@@ -87,6 +84,11 @@ class DetailsController extends Controller
 		$userPreference->genre = $request->input('genreImp');
 		
 		$userPreference->save();
+		
+		
+		$user = User::find($id);
+		$user->preferenceSet = 1;
+		$user->save();
 		
 		return redirect('/')->with('success', 'Details Updated');
     

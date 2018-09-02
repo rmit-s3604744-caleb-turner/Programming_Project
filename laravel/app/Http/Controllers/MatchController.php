@@ -41,8 +41,18 @@ class MatchController extends Controller
 		
 		
 		
-        $others = self::getOthers();
+		
 		$userID = self::getID();
+		
+		
+		$user = User::find($userID);
+		if($user->preferenceSet==0){
+			return redirect('preferences')->with('error', "You can't find matches until you have preferences set.");
+		}
+		
+
+        $others = self::getOthers();
+		
 		
 		$array = self::getMatchArray();
 		
@@ -206,7 +216,9 @@ class MatchController extends Controller
 	
 	private function getOthers(){
 		$userID = self::getID();
-		$otherUsers = User::where('id', '!=', $userID)->pluck('id')->toArray();
+		
+		
+		$otherUsers = User::where('id', '!=', $userID)->where('preferenceSet', '1')->pluck('id')->toArray();
 		
 		return $otherUsers;
 	}
