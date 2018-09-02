@@ -2,7 +2,7 @@
 
 
 @section('content')
-	<h1> Your Matches <h1>
+	<h1> Your Matches </h1>
 	
 	@if(count($array) > 0)
 		
