@@ -7,7 +7,7 @@ use MovieBuffs\User;
 use MovieBuffs\UserDetail;
 use MovieBuffs\UserPreference;
 use DB;
-
+use Illuminate\Support\Facades\Auth;
 
 class MatchController extends Controller
 {
@@ -34,6 +34,13 @@ class MatchController extends Controller
 		//$posts = Post::orderBy('created_at', 'desc')->get();
 		
 		// has an array of id's that are not the current user
+		
+		if(! Auth::check()){
+			return redirect('/')->with('error', 'Unauthorised Page: Access Denied');
+		}
+		
+		
+		
         $others = self::getOthers();
 		$userID = self::getID();
 		

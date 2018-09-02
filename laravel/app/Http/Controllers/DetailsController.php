@@ -7,7 +7,7 @@ use MovieBuffs\User;
 use MovieBuffs\UserDetail;
 use MovieBuffs\UserPreference;
 use DB; 
-
+use Illuminate\Support\Facades\Auth;
 
 class DetailsController extends Controller
 {
@@ -21,7 +21,9 @@ class DetailsController extends Controller
      */
     public function index()
     {
-		
+		if(! Auth::check()){
+			return redirect('/')->with('error', 'Unauthorised Page: Access Denied');
+		}
 		
 		// get id
         $userID = auth()->user()->id;
