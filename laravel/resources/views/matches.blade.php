@@ -12,7 +12,8 @@
 		
 			<tr>
 			
-				<th>Matches</th>
+				<th>Name</th>
+				<th>Match % </th>
 				
 			</tr>
 			
