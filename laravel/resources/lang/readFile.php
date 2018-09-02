@@ -13,9 +13,7 @@ function readIntoArray(){
 
 // creates an array of matches
 function getMatchArray(){
-	
 
-	
 	$user1Details = getDetails(1);
 
 	$user1Preferences = getPrefs(1);
@@ -47,7 +45,7 @@ function getMatchArray(){
 	
 
 	// a bubblesort method that sorts the array.
-	usort($scores, "callbackSort");
+	usort($scores, "self::callbackSort");
 	
 	// can restrict the array to top 10 results or so here
 	return $scores;
@@ -104,8 +102,7 @@ function findGenreSimilarity($user1Details, $user2Details){
 		$difference = 1-$difference;
 		
 		$similarity+= $difference;
-		
-		
+
 	}
 	
 	$similarity /= $length - $skipEntries;

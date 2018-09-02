@@ -4,6 +4,8 @@ namespace MovieBuffs\Http\Controllers;
 
 use Illuminate\Http\Request;
 use MovieBuffs\Post;
+use MovieBuffs\User;
+
 use DB; 
 
 class PostsController extends Controller
