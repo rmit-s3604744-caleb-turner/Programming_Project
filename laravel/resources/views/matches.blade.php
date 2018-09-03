@@ -2,9 +2,9 @@
 
 
 @section('content')
-	<h1> Your Matches </h1>
+	<h1> Pending Matches </h1>
 	
-	@if(count($array) > 0)
+	@if(count($requestArray) > 0)
 		
 			
 			
@@ -13,24 +13,74 @@
 			<tr>
 			
 				<th>Name</th>
-				<th>Match % </th>
+				<th>Match Percentage</th>
 				
 			</tr>
 			
-			@foreach($array as $user)
+			<tr>
 			
-				<tr>
+				@foreach($requestArray as $request)
+					<td>{{$request[0]}}</td>
+					<td>{{$request[1]}}</td>
+					
+					
+					
+					<td>
+						<form method="post" action="acceptRequest">
+							<input type="hidden" name="id" value={{$request[2]}} />
+							{{ csrf_field() }}
+							<button type="submit">Accept</button>
+						</form>
+					</td>
+					
+					<td>
+						<form method="post" action="denyRequest">
+							<input type="hidden" name="id" value={{$request[2]}} />
+							{{ csrf_field() }}
+							<button type="submit">Deny</button>
+						</form>
+					</td>
+					
+					
+					
+				@endforeach
 			
-					<td>{{$user[0][0]}}</td>
-					<td>{{$user[2]}}</td>
-				
-				</tr>
-			@endforeach
+			</tr>
+			
 			
 		</table>
 		
 	
 	@else
-		<p> There are no other users. </p>
+		<p> No match requests. </p>
 	@endif
+	
+	
+	
+	
+	<h1> Matches </h1>
+	
+	
+	<table class="table table-striped">
+		
+			<tr>
+			
+				<th>Name</th>
+				
+			</tr>
+			
+			<tr>
+			
+				@foreach($matches as $match)
+					<td>{{$match[0]}}</td>
+
+				@endforeach
+			
+			</tr>
+			
+			
+		</table>
+	
+	
+	
 @endsection

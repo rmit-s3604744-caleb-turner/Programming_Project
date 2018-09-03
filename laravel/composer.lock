@@ -4,8 +4,69 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c289bcfd940360ca3c0cd869a29839e7",
+    "content-hash": "825b9e7a0667cb7ee56f467470d94ad5",
     "packages": [
+        {
+            "name": "cmgmyr/messenger",
+            "version": "2.16.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cmgmyr/laravel-messenger.git",
+                "reference": "9cdfb65d601442718de2d3afaa3d7ecbadbc3331"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cmgmyr/laravel-messenger/zipball/9cdfb65d601442718de2d3afaa3d7ecbadbc3331",
+                "reference": "9cdfb65d601442718de2d3afaa3d7ecbadbc3331",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "~5.0",
+                "illuminate/database": "~5.0",
+                "illuminate/support": "~5.0",
+                "nesbot/carbon": "~1.0",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "adamwathan/faktory": "0.3.*",
+                "friendsofphp/php-cs-fixer": "^2.5",
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpunit": "4.*|5.*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Cmgmyr\\Messenger\\MessengerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Cmgmyr\\Messenger\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Gmyr",
+                    "email": "cmgmyr@gmail.com",
+                    "homepage": "https://github.com/cmgmyr",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Simple user messaging tool for Laravel",
+            "keywords": [
+                "Messenger",
+                "laravel",
+                "messaging",
+                "user messaging"
+            ],
+            "time": "2018-06-16T13:16:18+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
@@ -365,6 +426,64 @@
                 "trusted proxy"
             ],
             "time": "2018-02-07T20:20:57+00:00"
+        },
+        {
+            "name": "hootlex/laravel-friendships",
+            "version": "v1.0.24",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hootlex/laravel-friendships.git",
+                "reference": "0100718545bad757006737c21a7b35dc5c52b443"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hootlex/laravel-friendships/zipball/0100718545bad757006737c21a7b35dc5c52b443",
+                "reference": "0100718545bad757006737c21a7b35dc5c52b443",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "^0.3.2",
+                "doctrine/dbal": "^2.5",
+                "fzaninotto/faker": "~1.4",
+                "laravel/laravel": "5.*",
+                "mockery/mockery": "^0.9.5",
+                "phpunit/phpunit": "5.*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Hootlex\\Friendships\\FriendshipsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hootlex\\Friendships\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hootlex",
+                    "email": "hootlex@icloud.com"
+                }
+            ],
+            "description": "This package gives Eloquent models the ability to manage their friendships.",
+            "keywords": [
+                "eloquent",
+                "friend-system",
+                "friends",
+                "friendships",
+                "laravel"
+            ],
+            "time": "2018-07-03T09:16:10+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",

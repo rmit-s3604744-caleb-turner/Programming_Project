@@ -34,10 +34,14 @@
 
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="/dashboard">Dashboard</a></li>
+									<li><a href="/posts">Browse Posts</a></li>
+									<li><a href="/messages">Conversations</a></li>
+									<li><a href="/messages/create">New Conversation</a></li>
+									
+									<li><a href="/matchlist">Find Matches</a></li>
+									<li><a href="/matches">View Matches</a></li>
 									
 									<li><a href="/preferences">Preferences</a></li>
-									
-									<li><a href="/matches">Matches</a></li>
 									
 									<li>
 										<a href="{{ route('logout') }}"

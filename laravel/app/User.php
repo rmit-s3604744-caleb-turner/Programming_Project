@@ -4,11 +4,15 @@ namespace MovieBuffs;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Cmgmyr\Messenger\Traits\Messagable;
+use Hootlex\Friendships\Traits\Friendable;
 
 class User extends Authenticatable
 {
     use Notifiable;
-
+	use Messagable;
+	use Friendable;
+	
     /**
      * The attributes that are mass assignable.
      *
@@ -41,4 +45,5 @@ class User extends Authenticatable
 	public function preferences(){
 		return $this->hasOne('MovieBuffs\UserPreference');
 	}
+	
 }

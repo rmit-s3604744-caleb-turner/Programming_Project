@@ -8,9 +8,108 @@ use MovieBuffs\UserDetail;
 use MovieBuffs\UserPreference;
 use DB;
 use Illuminate\Support\Facades\Auth;
+use Hootlex\Friendships\Traits\Friendable;
 
 class MatchController extends Controller
 {
+	
+	public function acceptFriendRequest(Request $request){
+		$user = User::find(self::getId());
+		$user->acceptFriendRequest(User::find($request->id));
+		
+		
+		return redirect('matches')->with('success', 'Match request sent.');
+	}
+	
+	public function denyFriendRequest(Request $request){
+		$user = User::find(self::getId());
+		$user->denyFriendRequest(User::find($request->id));
+		
+		
+		return redirect('matches')->with('error', 'Match request denied.');
+	}
+	
+	
+	public function matches(){
+		$user = User::find(self::getID());
+		$user1Preferences = self::getPreferences($user->id);
+		$maxScore = ($user1Preferences->location + $user1Preferences->movies + $user1Preferences->genre);
+		
+		
+		$pending = $user->getFriendRequests();
+		
+		$requestArray = array();
+		
+		// for each new request
+		foreach($pending as $request){
+			
+			// if the request is not from me
+			if($pending[0]->sender_id != self::getID()){
+				
+				$user2 = User::find($pending[0]->sender_id);
+				
+				
+				$similarity = self::findSimilarity($user->id, $user2->id);
+			
+				if(($similarity == 0) || ($maxScore == 0)){
+					$percentage = 0 . '%';
+				}else{
+					$percentage = $similarity / $maxScore;
+					$percentage = round((float)$percentage * 100) . '%';
+				}
+				$percentage = round((float)$percentage * 100) . '%';
+				
+				$tempArray = array();
+				array_push($tempArray, $user2->name, $percentage, $user2->id);
+				array_push($requestArray, $tempArray);
+				
+				
+			}
+
+		}
+		
+		
+		$accepted = $user->getAcceptedFriendships();
+		$matches = array();
+		foreach($accepted as $match){
+			
+			if($match->sender_id == $user->id){
+				$user2 = User::find($match->recipient_id);
+			}else{
+				$user2 = User::find($match->sender_id);
+			}
+				
+				
+				
+			$tempArray = array();
+			array_push($tempArray, $user2->name, $user2->id);
+			array_push($matches, $tempArray);
+
+
+		}
+
+		return view('matches')->with('requestArray', $requestArray)->with('matches', $matches);
+		
+	}
+	
+	
+	
+	public function sendFriendRequest(Request $request){
+		// send request
+		
+		$user = User::find(self::getID());
+		$user2 = User::find($request->id);
+		
+		$user->befriend($user2);
+		
+		
+		return redirect('matchlist')->with('success', 'Match request sent.');
+
+	}
+	
+	
+	
+	
     public function index()
     {
 
@@ -56,7 +155,7 @@ class MatchController extends Controller
 		
 		$array = self::getMatchArray();
 		
-		return view('matches')->with('array', $array);
+		return view('matchlist')->with('array', $array);
 		
 		
     }
@@ -76,19 +175,34 @@ class MatchController extends Controller
 		
 		$userList = self::getOthers();
 		
+		$self = User::find($user1ID);
+		$friends = $self->getFriends();
+		
+		
+		
 		foreach($userList as $user2ID){
 			
-			$user2Name = self::getName($user2ID);
+			// check to make sure they are not in the accepted friends
 			
-			$similarity = self::findSimilarity($user1ID, $user2ID);
+			if(! $friends->contains('id', $user2ID)){
+				
+				
+				$user2Name = self::getName($user2ID);
 			
+				$similarity = self::findSimilarity($user1ID, $user2ID);
+				
+				
+				$percentage = $similarity / $maxScore;
+				$percentage = round((float)$percentage * 100) . '%';
+						
+				$tempArray = array();
+				array_push($tempArray, $user2Name, $percentage, $user2ID);
+				array_push($scores, $tempArray);
+				
+				
+			}
 			
-			$percentage = $similarity / $maxScore;
-			$percentage = round((float)$percentage * 100) . '%';
-					
-			$tempArray = array();
-			array_push($tempArray, $user2Name, $similarity, $percentage);
-			array_push($scores, $tempArray);
+
 			
 		}
 
