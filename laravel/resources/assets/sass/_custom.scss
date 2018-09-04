@@ -1,0 +1,148 @@
+.Mcontainer{
+    
+    position: relative;
+   
+    width: 600px;
+    height: 400px;
+    top:170px; 
+    right: 140px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+
+    overflow: hidden;  /* Crop it like it's hot! */
+
+    /* not part of the implementation; only to display what's going on */
+  
+    background-color: #ddd;
+     max-width: 100%;
+     height: auto;
+
+
+
+
+   
+
+   
+}
+
+
+
+.MI {
+    position:relative;  
+    width: 600px;
+    
+     max-width: 100%;
+     height: auto;
+   
+
+}
+
+
+.Mcontainer:hover{
+    opacity: 0.7;
+    transition: 1s;
+}
+
+.C1{
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  left: 40px;
+  top: 250px;
+}
+
+
+
+.Tcontainer {
+    /* Set size of crop area. Setting its location happens bellow. */
+    position: relative;
+    width: 300px;
+   
+    left: 320px;
+    bottom: 219px;
+    overflow: hidden;  /* Crop it like it's hot! */
+    display: block;
+      margin-left: auto;
+    margin-right: auto;
+
+
+    /* not part of the implementation; only to display what's going on */
+
+    background-color: #ddd;
+
+       max-width: 100%;
+     height: 190px;
+
+}
+
+.TT {
+    /* Set the crop location by shifting the image
+     * up by 70px and to the right by 30px.
+     */
+    position: relative;
+    
+
+    /* Scale the image as you normally would. */
+         
+     max-width: 100%;
+     height: 190px;
+
+
+}
+
+.Tcontainer:hover {
+    opacity: 0.7;
+    transition: 1s;
+
+
+
+}
+
+
+
+.Bcontainer {
+        position: relative;
+    width: 300px;
+    height: 190px;
+    left: 320px;
+    bottom: 210px;
+    
+    overflow: hidden;  /* Crop it like it's hot! */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ 
+    /* not part of the implementation; only to display what's going on */
+
+    background-color: #ddd;
+
+       max-width: 100%;
+     
+
+}
+
+.BU {
+        position: relative;
+    
+
+    /* Scale the image as you normally would. */
+    
+    width: 100%;
+     max-width: 100%;
+     height: 190px;
+}
+
+
+
+.Bcontainer:hover {
+    opacity: 0.7;
+    transition: 1s;
+}
+
+
+
+
