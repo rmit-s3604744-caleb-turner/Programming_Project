@@ -196,7 +196,7 @@ class MatchController extends Controller
 				$percentage = round((float)$percentage * 100) . '%';
 						
 				$tempArray = array();
-				array_push($tempArray, $user2Name, $percentage, $user2ID);
+				array_push($tempArray, $user2Name, $percentage, $user2ID, $similarity);
 				array_push($scores, $tempArray);
 				
 				
@@ -217,7 +217,7 @@ class MatchController extends Controller
 
 	// Means of bubblesorting the array so that the highest % is 1st.
 	function callbackSort($a, $b){
-		return ($a[1] >= $b[1]) ? -1 : 1;
+		return ($a[3] >= $b[3]) ? -1 : 1;
 	}
 	
 	

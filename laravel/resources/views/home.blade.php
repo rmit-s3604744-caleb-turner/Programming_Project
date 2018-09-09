@@ -1,9 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
+
+@include('include.carousel')
 <div class="container">
 
-Homepage
+
+
+
+<style>
+	
+ 
+
+
+
 
 </div>
 @endsection
