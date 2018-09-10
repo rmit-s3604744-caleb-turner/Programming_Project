@@ -50,11 +50,30 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
+		$rules = array('name' => 'bail|required|string|max:20',
+            'email' => 'bail|required|string|email|max:50|unique:users',
+            'password' => 'bail|required|min:6|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/|confirmed');
+			
+		$messages = array(
+						'name.required'=>'You must give yourself a name.',
+						'name.string'=>'Names must be strings.',
+						'name.max'=>'Your name cannot be larger than 50 characters',
+						'email.required'=>'You must enter an email address.',
+						'email.string'=>'The email address must be a string.',
+						'email.email'=>'The email must be a valid email',
+						'email.max'=>'The email cannot be longer than 50 characters.',
+						'email.unique'=>'That email is already being used.',
+						'password.required'=>'You need a password to log in with.',
+						'password.regex'=>"The password must have at least 1 uppercase letter, 1 lowercase letter, and 1 number.",
+						'password.min'=>'Your password must be at least 6 characters long.',
+						'password.confirmed'=>'Your confirmed password must match your password.'
+						);
+		
+		$errors = Validator::make($data, $rules, $messages);
+		
+
+		
+        return $errors;
     }
 
     /**
