@@ -10471,6 +10471,18 @@ a.text-dark:focus {
   }
 }
 
+body {
+  background-color: #fefefe;
+  font-family: 'Playfair Display', serif;
+  line-height: 1.0;
+}
+
+.c4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-style: italic;
+}
+
 .Mcontainer {
   position: relative;
   width: 600px;
@@ -10505,9 +10517,8 @@ a.text-dark:focus {
   z-index: 100;
   position: absolute;
   color: white;
-  font-size: 30px;
-  font-weight: bold;
-  left: 40px;
+  font-size: 40px;
+  left: 20px;
   top: 250px;
 }
 
@@ -10517,15 +10528,16 @@ a.text-dark:focus {
   width: 300px;
   left: 320px;
   bottom: 219px;
-  overflow: hidden;
   /* Crop it like it's hot! */
   display: block;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
   /* not part of the implementation; only to display what's going on */
   background-color: #ddd;
   max-width: 100%;
   height: 190px;
+  clear: both;
 }
 
 .TT {
@@ -10534,7 +10546,7 @@ a.text-dark:focus {
      */
   position: relative;
   /* Scale the image as you normally would. */
-  max-width: 100%;
+  right: 20px;
   height: 190px;
 }
 
@@ -10542,6 +10554,15 @@ a.text-dark:focus {
   opacity: 0.7;
   -webkit-transition: 1s;
   transition: 1s;
+}
+
+.C2 {
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 23px;
+  left: 1140px;
+  top: 100px;
 }
 
 .Bcontainer {
@@ -10574,8 +10595,57 @@ a.text-dark:focus {
   transition: 1s;
 }
 
+.C3 {
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 23px;
+  left: 1140px;
+  top: 570px;
+}
+
+.test {
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 23px;
+  top: 160px;
+  left: 10px;
+}
+
+.c5 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-style: italic;
+  z-index: 100;
+  position: absolute;
+  color: white;
+  top: 140px;
+  left: 10px;
+}
+
+.c6 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-style: italic;
+  z-index: 100;
+  position: absolute;
+  color: white;
+  top: 140px;
+  left: 10px;
+}
+
+.c7 {
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 23px;
+  top: 160px;
+  left: 10px;
+}
+
 .navbar-laravel {
-  background-color: #fff;
+  background-color: #fefefe;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
