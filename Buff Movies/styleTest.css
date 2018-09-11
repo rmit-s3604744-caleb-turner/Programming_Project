@@ -1,0 +1,71 @@
+
+.pageContainer{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.movie-banner{
+  overflow-y: hidden;
+  position: relative;
+}
+
+.banner-img{
+  position: relative;
+  width: 100%
+}
+
+.title {
+  position: absolute;
+  bottom: 8px;
+  padding-left: 16px;
+  /*left: 16px;*/
+}
+
+.fkbuddy {
+  padding-left: 16px;
+  border-bottom: 2px solid #cbcbd1;
+}
+
+.trailerPos{
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid #cbcbd1;
+}
+
+.syn{
+  text-align: center;
+  padding-left: 400px;
+  padding-right: 400px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid #cbcbd1;
+}
+
+.columnL {
+  text-align: center;
+  padding-top: 50px;
+  float: left;
+  width: 50%;
+}
+
+.columnR {
+  padding-top: 50px;
+  float: left;
+  width: 50%;
+}
+
+
+/*@media (max-width: 1000px) {
+
+.movie-banner {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  left: 0;
+  position: relative;
+  padding-top: calc(139px + 139 * (100vw - 320px) / 447);
+  top: 0;
+}*/
+
+
