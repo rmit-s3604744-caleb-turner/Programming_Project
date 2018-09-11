@@ -1,19 +1,22 @@
+
+
 @extends('layouts.app')
 
 @section('content')
 
+
+@include('include.nav')
 @include('include.carousel')
-<div class="container">
 
 
+<h1 class= "meme">Best Actors<h1>
+@include('include.gallery')
 
+@include('include.footer')
 
-<style>
-	
- 
-
-
-
-
-</div>
 @endsection
+
+
+
+
+
