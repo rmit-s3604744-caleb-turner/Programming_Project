@@ -10491,10 +10491,10 @@ body {
 
 .Mcontainer {
   position: relative;
-  width: 600px;
-  height: 400px;
+  width: 640px;
+  height: 500px;
   top: 170px;
-  right: 140px;
+  right: 180px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -10508,7 +10508,7 @@ body {
 
 .MI {
   position: relative;
-  width: 600px;
+  width: 640px;
   max-width: 100%;
   height: auto;
 }
@@ -10531,9 +10531,10 @@ body {
 .Tcontainer {
   /* Set size of crop area. Setting its location happens bellow. */
   position: relative;
-  width: 300px;
+  width: 350px;
+  height: 220px;
   left: 320px;
-  bottom: 219px;
+  bottom: 244px;
   /* Crop it like it's hot! */
   display: block;
   margin-left: auto;
@@ -10542,7 +10543,6 @@ body {
   /* not part of the implementation; only to display what's going on */
   background-color: #ddd;
   max-width: 100%;
-  height: 190px;
   clear: both;
 }
 
@@ -10552,8 +10552,9 @@ body {
      */
   position: relative;
   /* Scale the image as you normally would. */
-  right: 20px;
-  height: 190px;
+  right: 50px;
+  height: 280px;
+  width: 440px;
 }
 
 .Tcontainer:hover {
@@ -10573,10 +10574,10 @@ body {
 
 .Bcontainer {
   position: relative;
-  width: 300px;
+  width: 350px;
   height: 190px;
   left: 320px;
-  bottom: 210px;
+  bottom: 240px;
   overflow: hidden;
   /* Crop it like it's hot! */
   display: block;
@@ -10590,9 +10591,8 @@ body {
 .BU {
   position: relative;
   /* Scale the image as you normally would. */
-  width: 100%;
-  max-width: 100%;
-  height: 190px;
+  width: 370px;
+  height: 250px;
 }
 
 .Bcontainer:hover {
@@ -10648,6 +10648,35 @@ body {
   font-size: 23px;
   top: 160px;
   left: 10px;
+}
+
+.form group row {
+  position: absolute;
+  left: 1000px;
+}
+
+.container {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: black;
+}
+
+.login {
+  color: black;
+}
+
+a.login:hover {
+  font-weight: bold;
+  color: black;
+}
+
+a.signup:hover {
+  font-weight: bold;
+  color: black;
+}
+
+.signup {
+  color: black;
 }
 
 .nav1 {

@@ -24,10 +24,10 @@ font-family: 'Playfair Display', serif;
     
     position: relative;
    
-    width: 600px;
-    height: 400px;
+    width: 640px;
+    height: 500px;
     top:170px; 
-    right: 140px;
+    right: 180px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -53,7 +53,7 @@ font-family: 'Playfair Display', serif;
 
 .MI {
     position:relative;  
-    width: 600px;
+    width: 640px;
     
      max-width: 100%;
      height: auto;
@@ -83,10 +83,10 @@ font-family: 'Playfair Display', serif;
 .Tcontainer {
     /* Set size of crop area. Setting its location happens bellow. */
     position: relative;
-    width: 300px;
-   
+    width: 350px;
+   height: 220px;
     left: 320px;
-    bottom: 219px;
+    bottom: 244px;
   /* Crop it like it's hot! */
     display: block;
       margin-left: auto;
@@ -99,7 +99,7 @@ font-family: 'Playfair Display', serif;
     background-color: #ddd;
 
        max-width: 100%;
-     height: 190px;
+   
      clear: both;
 
 }
@@ -113,8 +113,9 @@ font-family: 'Playfair Display', serif;
 
     /* Scale the image as you normally would. */
          
-    right: 20px;
-     height: 190px;
+    right: 50px;
+     height: 280px;
+     width: 440px;
 
 
 }
@@ -144,10 +145,10 @@ font-family: 'Playfair Display', serif;
 
 .Bcontainer {
         position: relative;
-    width: 300px;
+    width: 350px;
     height: 190px;
     left: 320px;
-    bottom: 210px;
+    bottom: 240px;
     
     overflow: hidden;  /* Crop it like it's hot! */
     display: block;
@@ -169,9 +170,8 @@ font-family: 'Playfair Display', serif;
 
     /* Scale the image as you normally would. */
     
-    width: 100%;
-     max-width: 100%;
-     height: 190px;
+    width: 370px;
+     height: 250px;
 }
 
 
@@ -245,3 +245,8 @@ font-family: 'Montserrat', sans-serif;
    left: 10px;
 }
 
+.form group row {
+
+  position: absolute;
+  left: 1000px;
+}
