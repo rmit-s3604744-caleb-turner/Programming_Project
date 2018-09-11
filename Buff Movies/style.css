@@ -172,37 +172,91 @@ left: 50%;
 
   }
 
+  .checked {
+    color: orange;
+  }
 
-.Mcontainer{
-	
-	position: relative;
-	
-	width: 600px;
+.Mheading {
+  position: relative;
+  
+  width: 600px;
     height: 400px;
     top:170px; 
-    right: 140px;
+    right: 400px;
     display: block;
     margin-left: auto;
     margin-right: auto;
 
 
-    overflow: hidden;  /* Crop it like it's hot! */
-
-    /* not part of the implementation; only to display what's going on */
+    overflow: hidden;
     border: 1px solid black;
     background-color: #ddd;
-     max-width: 100%;
-	 height: auto;
-
-
-
-
-   
-
-   
+    max-width: 100%;
+   height: auto;
+   text-align: center;  
 }
 
+.Mcontainer {
+	position: relative;
+	
+	width: 600px;
+    height: 400px;
+    top:200px; 
+    right: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 
+
+    overflow: hidden;
+    border: 1px solid black;
+    background-color: #ddd;
+    max-width: 100%;
+	 height: auto;  
+}
+
+.Mrating {
+  position: relative;
+  
+  width: 600px;
+    height: 400px;
+    top:230px; 
+    right: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+
+    overflow: hidden;
+    border: 1px solid black;
+    background-color: #ddd;
+    max-width: 100%;
+   height: auto;
+   text-align: center;  
+}
+
+.Mdescription {
+  position: relative;
+  
+  width: 600px;
+    height: 400px;
+    top:-410px; 
+    right: -400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+
+    overflow: hidden;
+    border: 1px solid black;
+    background-color: #ddd;
+    max-width: 100%;
+   height: auto;
+   text-align: center;
+   padding-top: 10px;
+   padding-left: 10px;
+   padding-right: 10px;
+}
 
 .MI {
 	position:relative;	
@@ -233,9 +287,9 @@ left: 50%;
     bottom: 219px;
     overflow: hidden;  /* Crop it like it's hot! */
     display: block;
-      margin-left: auto;
+    margin-left: auto;
     margin-right: auto;
-     border: 1px solid black;
+    border: 1px solid black;
 
     /* not part of the implementation; only to display what's going on */
 
