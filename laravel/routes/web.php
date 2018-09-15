@@ -16,6 +16,8 @@ Route::get('/', 'PagesController@home');
 
 
 Route::resource('posts', 'PostsController');
+Route::resource('profile', 'ProfilesController');
+Route::post('profile/', 'ProfilesController@addRating');
 
 Auth::routes();
 
@@ -24,6 +26,7 @@ Route::resource('preferences', 'DetailsController');
 Route::get('/dashboard', 'DashboardController@index');
 
 Route::get('matchlist', 'MatchController@index');
+Route::get('matchlist/refine', 'MatchController@refine');
 Route::get('matches', 'MatchController@matches');
 Route::post('sendRequest', 'MatchController@sendFriendRequest');
 Route::post('acceptRequest', 'MatchController@acceptFriendRequest');

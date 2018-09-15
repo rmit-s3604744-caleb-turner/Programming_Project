@@ -9,6 +9,9 @@ use MovieBuffs\UserPreference;
 use DB;
 use Illuminate\Support\Facades\Auth;
 use Hootlex\Friendships\Traits\Friendable;
+use MovieBuffs\Profile;
+use willvincent\Rateable\Rateable;
+
 
 class MatchController extends Controller
 {
@@ -18,7 +21,7 @@ class MatchController extends Controller
 		$user->acceptFriendRequest(User::find($request->id));
 		
 		
-		return redirect('matches')->with('success', 'Match request sent.');
+		return redirect('matches')->with('success', 'Match request accepted.');
 	}
 	
 	public function denyFriendRequest(Request $request){
@@ -57,7 +60,8 @@ class MatchController extends Controller
 					$percentage = $similarity / $maxScore;
 					$percentage = round((float)$percentage * 100) . '%';
 				}
-				$percentage = round((float)$percentage * 100) . '%';
+				
+				
 				
 				$tempArray = array();
 				array_push($tempArray, $user2->name, $percentage, $user2->id);
@@ -107,6 +111,35 @@ class MatchController extends Controller
 
 	}
 	
+	public function refine(Request $request){
+		if(! Auth::check()){
+			return redirect('/')->with('error', 'Unauthorised Page: Access Denied');
+		}
+		
+		
+		
+		
+		$userID = self::getID();
+		
+		
+		$user = User::find($userID);
+		if($user->preferenceSet==0){
+			return redirect('preferences')->with('error', "You can't find matches until you have preferences set.");
+		}
+		
+
+        $others = self::getOthers();
+		
+		
+		$threshold = $request->threshold;
+		
+		$array = self::getMatchArray($threshold);
+		
+		return view('matchlist')->with('array', $array);
+		
+		
+		
+	}
 	
 	
 	
@@ -153,7 +186,7 @@ class MatchController extends Controller
         $others = self::getOthers();
 		
 		
-		$array = self::getMatchArray();
+		$array = self::getMatchArray(0);
 		
 		return view('matchlist')->with('array', $array);
 		
@@ -163,7 +196,7 @@ class MatchController extends Controller
 	
 	
 	
-	function getMatchArray(){
+	function getMatchArray($threshold){
 
 		$user1ID = self::getID();
 	
@@ -187,22 +220,33 @@ class MatchController extends Controller
 			if(! $friends->contains('id', $user2ID)){
 				
 				
-				$user2Name = self::getName($user2ID);
+				// check if they meet the threshold 
+				$profile = Profile::find($user2ID);
+				$reviewCheck = DB::table("ratings")->where("rateable_id", $user2ID)->get();
+				if(sizeof($reviewCheck) == 0){
+					$rating = '0';
+				}else{
+					$rating = $profile->averageRating;
+				}
+		
+				if($rating>= $threshold){
+					
+					$user2Name = self::getName($user2ID);
 			
-				$similarity = self::findSimilarity($user1ID, $user2ID);
-				
-				
-				$percentage = $similarity / $maxScore;
-				$percentage = round((float)$percentage * 100) . '%';
+					$similarity = self::findSimilarity($user1ID, $user2ID);
+					
+					
+					$percentage = $similarity / $maxScore;
+					$percentage = round((float)$percentage * 100) . '%';
+							
+							
+					$tempArray = array();
+					array_push($tempArray, $user2Name, $percentage, $user2ID, $similarity, $rating);
+					array_push($scores, $tempArray);
 						
-				$tempArray = array();
-				array_push($tempArray, $user2Name, $percentage, $user2ID);
-				array_push($scores, $tempArray);
-				
+				}
 				
 			}
-			
-
 			
 		}
 
@@ -217,7 +261,7 @@ class MatchController extends Controller
 
 	// Means of bubblesorting the array so that the highest % is 1st.
 	function callbackSort($a, $b){
-		return ($a[1] >= $b[1]) ? -1 : 1;
+		return ($a[3] >= $b[3]) ? -1 : 1;
 	}
 	
 	
