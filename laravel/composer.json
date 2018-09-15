@@ -12,7 +12,9 @@
         "laravel/framework": "5.6.*",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^5.4.0",
-        "unisharp/laravel-ckeditor": "^4.7"
+        "laravelista/comments": "^2.0",
+        "unisharp/laravel-ckeditor": "^4.7",
+        "willvincent/laravel-rateable": "^1.07"
     },
     "require-dev": {
         "filp/whoops": "^2.0",
@@ -51,6 +53,10 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover"
+        ],
+        "post-install-cmd": [
+           "chmod -R 755 bootstrap\\\/cache",
+            "php artisan cache:clear"
         ]
     },
     "config": {

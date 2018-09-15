@@ -116,6 +116,10 @@ class RegisterController extends Controller
 		$userPreference->save();
 		
 		
+		$profile = new Profile;
+		$profile->id = $id;
+		$profile->save();
+		
 		return $newUser;
     }
 }

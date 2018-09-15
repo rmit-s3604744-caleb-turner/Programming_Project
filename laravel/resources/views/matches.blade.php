@@ -73,7 +73,10 @@
 			
 				@foreach($matches as $match)
 					<td>{{$match[0]}}</td>
-
+					<td><a href="/profile/{{$match[1]}}" class=="btn btn-default">Leave Rating</a></td>
+					
+					
+					
 				@endforeach
 			
 			</tr>
