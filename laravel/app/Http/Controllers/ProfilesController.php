@@ -82,11 +82,26 @@ class ProfilesController extends Controller
 			
 		}
 		
+		$self = User::find(auth()->user()->id);
+		$friends = $self->getFriends();
+		
+		
+		$canReview = $friends->where('id', $id);
+		if(count($canReview)){
+			$canReview = 1;
+		}else{
+			$canReview = 0;
+		}
 		
 		
 		
 		
-		return view('profile.index')->with('name', $name)->with('rating', $rating)->with('id',$id)->with('userComments', $userComments);
+		return view('profile.index')
+			->with('name', $name)
+			->with('rating', $rating)
+			->with('id',$id)
+			->with('userComments', $userComments)
+			->with('canReview',$canReview);
 
 		
 	}

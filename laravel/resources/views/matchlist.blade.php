@@ -2,7 +2,7 @@
 
 
 @section('content')
-	<h1> Your Matches </h1>
+	<h1> Potential Matches </h1>
 	
 	@if(count($array) > 0)
 		
@@ -34,7 +34,12 @@
 			
 				<tr>
 			
-					<td>{{$user[0][0]}}</td>
+					<td>
+						<a href="/profile/{{$user[2]}}">{{$user[0][0]}}</a>
+					</td>
+					
+					
+					
 					<td>{{$user[1]}}</td>
 					<td>{{$user[4]}}</td>
 					<td>
@@ -51,6 +56,6 @@
 		
 	
 	@else
-		<p> There are no other users. </p>Jesus Peat
+		<p> There are no other users. </p>
 	@endif
 @endsection
