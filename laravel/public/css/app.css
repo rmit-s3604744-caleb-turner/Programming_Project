@@ -10655,6 +10655,16 @@ body {
   left: 1000px;
 }
 
+.Pref {
+  position: absolute;
+  right: 800px;
+}
+
+.msgs {
+  position: absolute;
+  left: 800px;
+}
+
 .container {
   font-family: 'Montserrat', sans-serif;
   font-size: 13px;

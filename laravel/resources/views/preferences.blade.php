@@ -2,7 +2,8 @@
 
 
 @section('content')
-	<h1> Edit Preferences </h1>
+<div class= "Pref">
+	<h1 class= "Pre"> Edit Preferences</h1>
 
 	
 	{!! Form::open(['action' => ['DetailsController@update', $details[0]], 'method' => 'POST']) !!}
@@ -89,7 +90,7 @@
 		
 	{!! Form::close() !!}
 	
-	
+	</div>
 	
 	
 	

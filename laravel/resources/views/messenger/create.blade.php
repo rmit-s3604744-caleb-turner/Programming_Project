@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class= "msgs">
     <h1>Start a conversation</h1>
     <form action="{{ route('messages.store') }}" method="post">
         {{ csrf_field() }}
@@ -37,4 +38,5 @@
             </div>
         </div>
     </form>
+</div>
 @stop
