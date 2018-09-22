@@ -8,6 +8,7 @@ use MovieBuffs\User;
 
 use DB; 
 
+// Controller that handles user posts.
 class PostsController extends Controller
 {
 	/**
@@ -28,26 +29,6 @@ class PostsController extends Controller
     public function index()
     {
 
-		// get all 
-		// $posts = Post::all();
-		
-		// get a specific post
-		//$post = Post::where('title', '1st Post')->get();
-		
-		// alternative syntax
-		//$posts = DB::Select('SELECT * FROM posts');
-		
-		// limiting
-		//$posts = Post::orderBy('title', 'desc')->take(1)->get();
-		
-		
-		// pagination
-		//$posts = Post::orderBy('created_at', 'desc')->paginate(1);
-		
-		
-		//$posts = Post::orderBy('created_at', 'desc')->get();
-		
-		
 		$posts = Post::orderBy('created_at','desc')->paginate(10);
         return view('posts.index')->with('posts', $posts);
 		
@@ -76,8 +57,7 @@ class PostsController extends Controller
 			'body'=>'required'
 		]);
 		
-		// Create post code
-		
+	
 		$post = new Post;
 		$post->title = $request->input('title');
 		$post->body = $request->input('body');
@@ -109,10 +89,8 @@ class PostsController extends Controller
     public function edit($id)
     {
 		
-		// get id
         $post = Post::find($id);
 		
-		// check if correct id 
 		if(auth()->user()->id !== $post->user_id){
 			return redirect('posts.posts')->with('error', 'Unauthorised Page: Access Denied');
 		}
@@ -134,8 +112,6 @@ class PostsController extends Controller
 			'body'=>'required'
 		]);
 		
-		// Create post code
-		
 		$post = Post::find($id);
 		$post->title = $request->input('title');
 		$post->body = $request->input('body');
@@ -156,11 +132,9 @@ class PostsController extends Controller
     {
         $post = Post::find($id);
 		
-		// check if correct id 
 		if(auth()->user()->id !== $post->user_id){
 			return redirect('posts.posts')->with('error', 'Unauthorised Page: Access Denied');
 		}
-		
 		
 		$post->delete();
 		return redirect('/posts')->with('success', 'Post Removed');

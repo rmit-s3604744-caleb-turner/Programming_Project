@@ -1,6 +1,8 @@
 <?php
 
 namespace MovieBuffs\Http\Controllers;
+
+
 use MovieBuffs\User;
 use Carbon\Carbon;
 use Cmgmyr\Messenger\Models\Message;
@@ -10,6 +12,8 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
+
+// Controller that handles messaging.
 class MessagesController extends Controller
 {
     /**
@@ -70,18 +74,14 @@ class MessagesController extends Controller
 			}else{
 				$user2 = User::find($match->sender_id);
 			}
-				
-				
-				
+
 			$tempArray = array();
 			array_push($tempArray, $user2->name, $user2->id);
 			array_push($users, $tempArray);
 			
 			
 		}
-		
-		
-		
+
         return view('messenger.create', compact('users'));
     }
     /**
