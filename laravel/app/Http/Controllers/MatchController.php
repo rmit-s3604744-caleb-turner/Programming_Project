@@ -22,7 +22,7 @@ class MatchController extends Controller
 		return auth()->user()->id;
 	}
 	
-	.
+	
 	private function getDetails($id){
 		return UserDetail::find($id);
 	}
