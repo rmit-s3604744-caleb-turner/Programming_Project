@@ -3,6 +3,7 @@
 namespace MovieBuffs\Http\Controllers\Auth;
 
 use MovieBuffs\User;
+use MovieBuffs\Profile;
 use MovieBuffs\UserDetail;
 use MovieBuffs\UserPreference;
 use MovieBuffs\Http\Controllers\Controller;
