@@ -26,7 +26,7 @@ Route::resource('preferences', 'DetailsController');
 Route::get('/dashboard', 'DashboardController@index');
 
 Route::get('matchlist', 'MatchController@index');
-Route::get('matchlist/refine', 'MatchController@refine');
+Route::get('matchlist/refine', 'MatchController@index');
 Route::get('matches', 'MatchController@matches');
 Route::post('sendRequest', 'MatchController@sendFriendRequest');
 Route::post('acceptRequest', 'MatchController@acceptFriendRequest');

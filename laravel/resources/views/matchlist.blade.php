@@ -13,7 +13,7 @@
 				<th>Rating </th>
 				<th>
 
-					<form method="get" action="refine">
+					<form method="get" action="/matchlist/refine">
 							<input type="number" name="threshold" min="0" max="5" value="0"/>						
 
 							<button type="submit">Limit Results</button>
@@ -54,7 +54,7 @@
 				<th>Rating </th>
 				<th>
 
-					<form method="get" action="refine">
+					<form method="get" action="/matchlist/refine">
 							<input type="number" name="threshold" min="0" max="5" value="0"/>						
 
 							<button type="submit">Limit Results</button>

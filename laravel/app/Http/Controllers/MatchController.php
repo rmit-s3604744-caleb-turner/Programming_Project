@@ -62,7 +62,7 @@ class MatchController extends Controller
 	
 	
 	private function isSimilarText($text1, $text2){
-		$text1 = strtolower($text);
+		$text1 = strtolower($text1);
 		$text2 = strtolower($text2);
 		
 		if(strcmp($text1, $text2) == 0){
@@ -80,16 +80,19 @@ class MatchController extends Controller
 	// End of helper functions.
 	
 	
-	// Display function for when the user has not refined their search.
-	public function index(){
+	// Display function for matchlist.
+	public function index(Request $request){
+		
+		// If the user posted a get request for more refined search...
+		if($request){
+			// Refine the search.
+			return self::getMatchlist($request->threshold);
+		}
+		
 		return self::getMatchlist(0);
     }	
 	
-	// Display function for when the user has refined their search.
-	public function refine(Request $request){
-		$threshold = $request->threshold;
-		return self::getMatchlist($threshold);
-	}
+	
 	
 
 	// Get the list of potential matches.
