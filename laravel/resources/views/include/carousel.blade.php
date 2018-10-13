@@ -5,9 +5,9 @@
 <div class="Mcontainer">
 	<img src="{{ asset('img/MF.jpg') }}  " class="MI">
 <div class= "C1">
-	<h1 class= "c4">Best Out</h1>
+	<!-- <h1 class= "c4">Best Out</h1>
 	<p >Mission Impossible Fallout: </p>
-	<p>"Breaks" Records </p>
+	<p>"Breaks" Records </p> -->
 
 	</div>
 
@@ -18,7 +18,7 @@
 
 	
 
-
+<!-- 
 
 <div class = "Tcontainer">
 	<h1 class= "c5">Don't Miss</h1>
@@ -43,6 +43,6 @@
 <img src="{{ asset('img/RA.jpg') }}  " class="BU">
 
 
-</div>
+</div> -->
 
 </div>

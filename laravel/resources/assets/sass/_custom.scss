@@ -6,6 +6,31 @@ font-family: 'Playfair Display', serif;
 }
 
 
+@media screen and (max-width: 1000px) {
+
+     .carousel {
+     
+           transform: translate(-150px,100px) scale(0.9,0.9);
+
+    }
+
+        .Tcontainer {
+    
+    transform: translate(-25px) scale(1,1);
+   
+    }
+    .Bcontainer {
+ transform: translate(-25px) scale(1,1);
+
+    }
+.Mcontainer{
+  transform: translate(-32px) scale(1,1);
+
+    }
+
+}
+
+
 .section2{
 
   position: absolute;
